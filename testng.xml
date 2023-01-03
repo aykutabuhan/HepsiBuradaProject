@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/aykutabuhan/IdeaProjects/NewDesignHepsiBuradaProject">
+        <classes>
+            <class name="hepsiburada.pages.test.CampaignTest">
+                <methods>
+                    <include name="clickCampaign"/>
+                </methods>
+            </class>
+            <class name="hepsiburada.pages.test.ProductAddToCartTest">
+                <methods>
+                    <include name="searchProductName"/>
+                    <include name="choiceProduct"/>
+                    <include name="clickCommentButtons"/>
+                    <include name="clickFirstThumbButton"/>
+                    <include name="productAddToCart"/>
+                    <include name="goToCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
