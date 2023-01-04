@@ -16,7 +16,7 @@ public class ProductAddToCartTest extends Driver{
     private BasePage m_basePage;
     private static final String PRODUCT_NAME = "Iphone";
     private CartPage m_cartPage;
-    protected static final String baseURL = PropertyUtil.getProperty("config.properties", "webURL");
+    protected static final String baseURL = PropertyUtil.getProperty("webURL", "config.properties");
 
 
     @BeforeClass

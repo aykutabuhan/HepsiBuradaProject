@@ -13,7 +13,7 @@ public class PropertyUtil {
         Properties properties = null;
         try {
             properties = new Properties();
-            BufferedReader reader = new BufferedReader(new FileReader(fileName+RESOURCE_PATH));
+            BufferedReader reader = new BufferedReader(new FileReader(RESOURCE_PATH+fileName));
             properties.load(reader);
         }  catch (IOException e) {
             System.out.println(e.getMessage());
