@@ -41,7 +41,7 @@ public class ProductAddToCartTest extends Driver{
 
     @Test
     public void clickCommentButtons(){
-        m_basePage.switchToNewTab();
+        m_basePage.switchToNewTab(1);
         Assert.assertTrue(m_productInformationPage.isOnProductInformationPage(), "Not on the Product Information Page");
         m_productInformationPage.clickComments();
     }

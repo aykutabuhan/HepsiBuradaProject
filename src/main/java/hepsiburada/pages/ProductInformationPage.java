@@ -21,7 +21,7 @@ public class ProductInformationPage extends BasePage{
     @FindBy(css = "[class=checkoutui-ProductOnBasketHeader-zdTSacusLu4Cu0LDpmnB] [type=\"button\"]")
     private WebElement goToTheCart;
 
-    @FindBy(css = "div[id=comments-containe] a")
+    @FindBy(css = "div[id=comments-container] a")
     private WebElement assessmentField;
 
     public ProductInformationPage(WebDriver driver) {

@@ -25,10 +25,11 @@ public class BasePage{
     public void sendKeys(WebElement element, String text){
         element.sendKeys(text);
     }
-    public void switchToNewTab(){
+    public void switchToNewTab(int pageNumber){
         List<String> webPagesName = new ArrayList<>(m_driver.getWindowHandles());
-        m_driver.switchTo().window(webPagesName.get(1));
+        m_driver.switchTo().window(webPagesName.get(pageNumber));
     }
+
 
     public WebElement centerElement(WebElement element) {
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
@@ -52,7 +53,7 @@ public class BasePage{
             return true;
         }catch (NoSuchElementException e){
             System.out.println("Element yok!");
-            throw new NoSuchElementException("Reason");
+            return false;
         }
     }
 }

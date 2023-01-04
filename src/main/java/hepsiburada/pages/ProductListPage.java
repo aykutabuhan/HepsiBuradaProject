@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductListPage extends  BasePage{
 
-    @FindBy(css ="div[data-test-id='product-info-wrapper'] [data-test-id='product-card-name']")
+    @FindBy(css ="h3[data-test-id='product-card-name']")
     protected WebElement productsListLocator;
 
     @FindBy(css = "div[class=heroContent-scyHeKiKHlG11h80SgmH]")
