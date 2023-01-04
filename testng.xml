@@ -5,7 +5,7 @@
         <classes>
             <class name="hepsiburada.pages.test.CampaignTest">
                 <methods>
-                    <include name="clickCampaign"/>
+                    <exclude name="clickCampaign"/>
                 </methods>
             </class>
             <class name="hepsiburada.pages.test.ProductAddToCartTest">

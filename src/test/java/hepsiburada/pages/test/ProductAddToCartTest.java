@@ -1,6 +1,7 @@
 package hepsiburada.pages.test;
 
 import driver.Driver;
+import util.PropertyUtil;
 import hepsiburada.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,6 +16,8 @@ public class ProductAddToCartTest extends Driver{
     private BasePage m_basePage;
     private static final String PRODUCT_NAME = "Iphone";
     private CartPage m_cartPage;
+    protected static final String baseURL = PropertyUtil.getProperty("config.properties", "webURL");
+
 
     @BeforeClass
     public void loadDriver(){
@@ -23,8 +26,9 @@ public class ProductAddToCartTest extends Driver{
         m_productListPage = new ProductListPage(m_driver);
         m_productInformationPage = new ProductInformationPage(m_driver);
         m_basePage = new BasePage(m_driver);
-        m_driver.get("https://www.hepsiburada.com/");
         m_cartPage = new CartPage(m_driver);
+        m_driver.get(baseURL);
+
     }
 
     @Test

@@ -5,10 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver {
     protected WebDriver m_driver;
-    protected String baseUrl = "https://www.hepsiburada.com/";
 
     public void setDriver(){
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/util/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         m_driver = new ChromeDriver();
         m_driver.manage().window().maximize();
     }
