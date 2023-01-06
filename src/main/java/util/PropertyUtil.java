@@ -9,7 +9,6 @@ public class PropertyUtil {
     private PropertyUtil(){}
 
     public static String getProperty(String propertyName, String fileName){
-
         Properties properties = null;
         try {
             properties = new Properties();

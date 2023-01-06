@@ -28,7 +28,6 @@ public class ProductAddToCartTest extends Driver{
         m_basePage = new BasePage(m_driver);
         m_cartPage = new CartPage(m_driver);
         m_driver.get(baseURL);
-
     }
 
     @Test

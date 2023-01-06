@@ -9,6 +9,8 @@ public class CartPage extends BasePage{
 
     @FindBy (css = "[class=basket_headerTop_15H0U]")
     private WebElement myBasketLocator;
+    //xpath -> //*[contains(text(), "basket")]
+    //css -> [class*="basket"]
 
     @FindBy(css = "button[class=\"sc-AxjAm cxvjoB button_next_step_Dj-RE\"]")
     private WebElement goToPaymentButton;

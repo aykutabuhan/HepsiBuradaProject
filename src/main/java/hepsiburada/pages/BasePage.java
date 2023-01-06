@@ -1,11 +1,8 @@
 package hepsiburada.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -15,6 +12,7 @@ public class BasePage{
 
     protected WebDriver m_driver;
     protected WebDriverWait m_WaitPage;
+    private static final int DEFAULT_TIMEOUT_DURATION = 10;
 
     public BasePage(WebDriver driver){
         m_driver = driver;
@@ -48,12 +46,24 @@ public class BasePage{
     public boolean isDisplayed(WebElement element){
 
         try {
-            element.isDisplayed();
+            waitUntil(ExpectedConditions.visibilityOf(element));
             System.out.println("Element var!");
             return true;
         }catch (NoSuchElementException e){
             System.out.println("Element yok!");
             return false;
         }
+    }
+    private Wait<WebDriver> waitCondition(final int duration){
+        return new FluentWait<>(m_driver)
+                .pollingEvery(Duration.ofMillis(250))
+                .withTimeout(Duration.ofSeconds(duration))
+                .ignoring(NoSuchElementException.class, WebDriverException.class);
+    }
+    public void waitUntil(final ExpectedCondition<?> expectedCondition, final int duration) {
+        waitCondition(duration).until(expectedCondition);
+    }
+    public void waitUntil(final ExpectedCondition<?> expectedCondition) {
+        waitCondition(DEFAULT_TIMEOUT_DURATION).until(expectedCondition);
     }
 }
