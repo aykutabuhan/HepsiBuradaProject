@@ -9,17 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage{
-
     protected WebDriver m_driver;
     protected WebDriverWait m_WaitPage;
     private static final int DEFAULT_TIMEOUT_DURATION = 10;
 
     public BasePage(WebDriver driver){
         m_driver = driver;
-        m_WaitPage = new WebDriverWait(m_driver, Duration.ofSeconds(15));
+        m_WaitPage = new WebDriverWait(m_driver, Duration.ofSeconds(7));
         PageFactory.initElements(m_driver, this);
     }
-
     public void sendKeys(WebElement element, String text){
         element.sendKeys(text);
     }
@@ -27,8 +25,6 @@ public class BasePage{
         List<String> webPagesName = new ArrayList<>(m_driver.getWindowHandles());
         m_driver.switchTo().window(webPagesName.get(pageNumber));
     }
-
-
     public WebElement centerElement(WebElement element) {
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
                 + "var elementTop = arguments[0].getBoundingClientRect().top;"
