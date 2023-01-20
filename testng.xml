@@ -10,11 +10,8 @@
             </class>
             <class name="hepsiburada.pages.test.ProductAddToCartTest">
                 <methods>
-                    <include name="searchProductName"/>
-                    <include name="choiceProduct"/>
-                    <include name="clickCommentButtons"/>
-                    <include name="clickFirstThumbButton"/>
-                    <include name="productAddToCart"/>
+                    <include name="searchProductAndClick"/>
+                    <include name="checkAndAddProductInCart"/>
                     <include name="goToCart"/>
                 </methods>
             </class>
