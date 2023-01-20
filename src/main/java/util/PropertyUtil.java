@@ -3,10 +3,8 @@ package util;
 import java.io.*;
 import java.util.Properties;
 
-public class PropertyUtil {
-
+public final class PropertyUtil {
     private static final String RESOURCE_PATH = System.getProperty("user.dir") + "/src/main/resources/";
-    private PropertyUtil(){}
 
     public static String getProperty(String propertyName, String fileName){
         Properties properties = null;

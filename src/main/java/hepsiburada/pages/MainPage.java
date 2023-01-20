@@ -7,20 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage{
-
     @FindBy(css = "input[placeholder='Ürün, kategori veya marka ara']")
     private WebElement searchSpace;
-
     @FindBy(id = "onetrust-accept-btn-handler")
     private WebElement acceptCookies;
-
-    @FindBy(css = "[title=\"Kampanyalar\"]")
+    @FindBy(css = "[title='Kampanyalar']")
     private WebElement campaignLocator;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
     public void AcceptCookies(){
         acceptCookies.click();
     }

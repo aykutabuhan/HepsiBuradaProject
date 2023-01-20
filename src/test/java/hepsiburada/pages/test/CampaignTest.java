@@ -12,7 +12,6 @@ public class CampaignTest extends Driver {
 
     @BeforeClass
     public void loadDriver(){
-        setDriver();
         m_mainPage = new MainPage(m_driver);
         m_mainPage.navigateTo(baseURL);
     }
@@ -20,10 +19,5 @@ public class CampaignTest extends Driver {
     @Test
     public void clickCampaign(){
         m_mainPage.clickCampaignLocator();
-    }
-
-    @AfterClass
-    public void quitDriver(){
-        endDriver();
     }
 }

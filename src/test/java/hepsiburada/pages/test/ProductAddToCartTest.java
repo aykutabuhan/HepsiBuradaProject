@@ -4,12 +4,10 @@ import driver.Driver;
 import util.PropertyUtil;
 import hepsiburada.pages.*;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class ProductAddToCartTest extends Driver{
-//cmd + option + shift + L = testng.xml dosyası içinde.
     private MainPage m_mainPage;
     private ProductListPage m_productListPage;
     private ProductInformationPage m_productInformationPage;
@@ -21,7 +19,6 @@ public class ProductAddToCartTest extends Driver{
 
     @BeforeClass
     public void loadDriver(){
-        setDriver();
         m_mainPage = new MainPage(m_driver);
         m_productListPage = new ProductListPage(m_driver);
         m_productInformationPage = new ProductInformationPage(m_driver);
@@ -66,9 +63,5 @@ public class ProductAddToCartTest extends Driver{
         m_productInformationPage.goToCart();
         Assert.assertTrue(m_cartPage.isOnBasketPage(), "Not on the Basket Page");
 
-    }
-    @AfterClass
-    public void quitDriver(){
-        endDriver();
     }
 }
