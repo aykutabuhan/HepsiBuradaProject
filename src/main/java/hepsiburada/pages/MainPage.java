@@ -13,6 +13,8 @@ public class MainPage extends BasePage{
     private WebElement acceptCookies;
     @FindBy(css = "[title='Kampanyalar']")
     private WebElement campaignLocator;
+    @FindBy(xpath = "//h1[normalize-space()='Kampanyalar']")
+    private WebElement campaignText;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -20,13 +22,15 @@ public class MainPage extends BasePage{
     public void AcceptCookies(){
         acceptCookies.click();
     }
-    public void searchProductName(String productName){
+    public void searchProductNameAndClick(String productName){
         m_WaitPage.until(ExpectedConditions.visibilityOf(searchSpace));
         sendKeys(searchSpace, productName);
         searchSpace.sendKeys(Keys.ENTER);
     }
     public void clickCampaignLocator(){
-        m_WaitPage.until(ExpectedConditions.visibilityOf(campaignLocator));
-        clickElement(campaignLocator);
+        m_WaitPage.until(ExpectedConditions.visibilityOf(centerElement(campaignLocator))).click();
+    }
+    public String getCampaignText(){
+        return getText(campaignText);
     }
 }

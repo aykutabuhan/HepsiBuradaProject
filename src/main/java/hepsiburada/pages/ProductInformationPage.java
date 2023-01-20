@@ -14,10 +14,14 @@ public class ProductInformationPage extends BasePage{
     private WebElement commentsLocator;
     @FindBy(css = "[id=addToCart]")
     private WebElement addToCartButton;
-    @FindBy(css = "[class=checkoutui-ProductOnBasketHeader-zdTSacusLu4Cu0LDpmnB] [type=\"button\"]")
+    @FindBy(css = "a[class*='sf-OldMyAccount'] span[id=shoppingCart]")
     private WebElement goToTheCart;
-    @FindBy(css = "div[id=comments-container] a ")
-    private WebElement assessmentField;
+    @FindBy(css = "a[id='breadcrumbFor-apple'] span[itemprop='name']")
+    private WebElement productNameText;
+    @FindBy(css = "span[class*='hermes-ReviewCard-module-e']")
+    private WebElement thumbsLikedText;
+    @FindBy(css = "a[class*='sf-OldMyAccount'] span[id=cartItemCount]")
+    private WebElement cartCounter;
 
     public ProductInformationPage(WebDriver driver) {
         super(driver);
@@ -31,16 +35,21 @@ public class ProductInformationPage extends BasePage{
     public void clickAddToCart(){
         m_WaitPage.until(ExpectedConditions.visibilityOf(addToCartButton));
         clickElement(addToCartButton);
+        clickOutside();
     }
     public void goToCart(){
         m_WaitPage.until(ExpectedConditions.visibilityOf(goToTheCart));
         clickElement(goToTheCart);
     }
-    public boolean isOnProductInformationPage(){
-        return isDisplayed(addToCartButton);
+    public String productInformationNameText(){
+        return getText(productNameText);
     }
-    public boolean isOnAddProductInformationPage(){
-        m_WaitPage.until(ExpectedConditions.visibilityOf(goToTheCart));
-        return isDisplayed(assessmentField);
+    public String thumbsLikeText(){
+        waitUntil(ExpectedConditions.visibilityOf(thumbsLikedText));
+        return getText(thumbsLikedText);
+    }
+    public String cartCount(){
+        scrollUpPage(cartCounter);
+        return getText(cartCounter);
     }
 }
