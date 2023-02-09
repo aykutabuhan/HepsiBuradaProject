@@ -9,9 +9,6 @@ public class CartPage extends BasePage{
     @FindBy (css = "div[class*=basket] h1")
     private WebElement myBasketLocator;
 
-    public CartPage(WebDriver driver) {
-        super(driver);
-    }
     public boolean isOnBasketPage(){
         waitUntil(ExpectedConditions.visibilityOf(myBasketLocator), 5);
         return isDisplayed(myBasketLocator);

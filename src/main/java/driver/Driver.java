@@ -2,21 +2,22 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-    protected WebDriver m_driver;
+    public static WebDriver getDriver(String browserName){
 
-    @BeforeClass
-    public void setDriver(){
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-        m_driver = new ChromeDriver();
-        m_driver.manage().window().maximize();
-    }
+        WebDriver driver;
 
-    @AfterClass
-    public void endDriver(){
-        m_driver.quit();
+        if (browserName.equalsIgnoreCase("Chrome")){
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+            return driver = new ChromeDriver();
+        }
+        else if (browserName.equalsIgnoreCase("Safafi")) {
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+            return driver = new SafariDriver();
+        }
+        else 
+            return driver = null;
     }
 }

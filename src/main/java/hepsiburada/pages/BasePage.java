@@ -1,5 +1,6 @@
 package hepsiburada.pages;
 
+import driver.Driver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -10,13 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage{
-    protected WebDriver m_driver;
+    protected WebDriver m_driver = Driver.getDriver("Chrome");
     protected WebDriverWait m_WaitPage;
     protected Actions m_actions;
     private static final int DEFAULT_TIMEOUT_DURATION = 10;
 
-    public BasePage(WebDriver driver){
-        m_driver = driver;
+    public BasePage(){
         m_WaitPage = new WebDriverWait(m_driver, Duration.ofSeconds(7));
         PageFactory.initElements(m_driver, this);
         m_actions = new Actions(m_driver);

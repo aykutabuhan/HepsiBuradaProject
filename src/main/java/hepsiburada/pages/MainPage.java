@@ -1,7 +1,6 @@
 package hepsiburada.pages;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,10 +15,8 @@ public class MainPage extends BasePage{
     @FindBy(xpath = "//h1[normalize-space()='Kampanyalar']")
     private WebElement campaignText;
 
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
-    public void AcceptCookies(){
+
+    public void acceptCookies(){
         acceptCookies.click();
     }
     public void searchProductNameAndClick(String productName){
