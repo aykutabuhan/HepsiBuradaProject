@@ -1,6 +1,5 @@
 package stepDefinition;
 
-import cucumber.api.java.en.And;
 import driver.Driver;
 import hepsiburada.pages.MainPage;
 import io.cucumber.java.en.Given;
@@ -16,12 +15,6 @@ public class CampaignPageSteps {
     private static final String CAMPAIGN_TEXT = "Kampanyalar";
     protected static final String baseURL = PropertyUtil.getProperty("webURL", "config.properties");
 
-    @Given("navigate to website")
-    public void navigate_to_website() {
-        WebDriver driver = Driver.getDriver("Chrome");
-        driver.manage().window().maximize();
-        driver.get(baseURL);
-    }
     @When("click to campaign button")
     public void clickToCampaignButton() {
         m_mainPage.clickCampaignLocator();
