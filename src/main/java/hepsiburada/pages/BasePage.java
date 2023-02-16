@@ -72,4 +72,5 @@ public class BasePage{
         JavascriptExecutor jse = (JavascriptExecutor)m_driver;
         jse.executeScript("arguments[0].scrollIntoView(true);",element);
     }
+
 }

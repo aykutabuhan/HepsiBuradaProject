@@ -49,4 +49,5 @@ public class ProductInformationPage extends BasePage{
         scrollUpPage(cartCounter);
         return getText(cartCounter);
     }
+
 }

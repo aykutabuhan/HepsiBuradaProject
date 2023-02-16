@@ -30,4 +30,5 @@ public class MainPage extends BasePage{
     public String getCampaignText(){
         return getText(campaignText);
     }
+
 }

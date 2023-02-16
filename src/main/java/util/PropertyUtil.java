@@ -17,4 +17,5 @@ public final class PropertyUtil {
         }
         return properties.getProperty(propertyName);
     }
+
 }

@@ -18,4 +18,5 @@ public class ProductListPage extends  BasePage{
     public String productListText(){
         return getText(productNameText);
     }
+
 }

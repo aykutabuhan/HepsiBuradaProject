@@ -13,4 +13,5 @@ public class CartPage extends BasePage{
         waitUntil(ExpectedConditions.visibilityOf(myBasketLocator), 5);
         return isDisplayed(myBasketLocator);
     }
+
 }
