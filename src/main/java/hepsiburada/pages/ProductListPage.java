@@ -11,6 +11,9 @@ public class ProductListPage extends  BasePage{
     @FindBy(css = "div[class*=heroContent] div")
     private WebElement productNameText;
 
+    public ProductListPage(WebDriver driver) {
+        super(driver);
+    }
     public void clickFirstProduct(){
         m_WaitPage.until(ExpectedConditions.visibilityOf(productsListLocator));
         clickElement(productsListLocator);
