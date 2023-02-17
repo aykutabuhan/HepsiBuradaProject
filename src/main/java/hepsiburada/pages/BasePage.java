@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage{
-    protected WebDriver m_driver = Driver.getDriver("Chrome");
+
+    protected WebDriver m_driver;
     protected WebDriverWait m_WaitPage;
     protected Actions m_actions;
     private static final int DEFAULT_TIMEOUT_DURATION = 10;
 
-    public BasePage(){
+    public BasePage(WebDriver driver){
+        m_driver = driver;
         m_WaitPage = new WebDriverWait(m_driver, Duration.ofSeconds(7));
         PageFactory.initElements(m_driver, this);
         m_actions = new Actions(m_driver);
