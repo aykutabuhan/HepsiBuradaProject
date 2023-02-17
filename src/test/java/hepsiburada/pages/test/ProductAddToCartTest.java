@@ -33,7 +33,7 @@ public class ProductAddToCartTest extends Driver{
     }
     @Test
     public void searchProductAndClick(){
-        m_mainPage.AcceptCookies();
+        m_mainPage.acceptCookies();
         m_mainPage.searchProductNameAndClick(PRODUCT_SEARCH_NAME);
         Assert.assertEquals(m_productListPage.productListText(), BRAND_FILTER_NAME,
                 "Not on Product List Page");
@@ -57,5 +57,4 @@ public class ProductAddToCartTest extends Driver{
         m_productInformationPage.goToCart();
         Assert.assertTrue(m_cartPage.isOnBasketPage(), "Not on the Basket Page");
     }
-
 }
